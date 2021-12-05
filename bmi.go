@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"go-bmi-calculator-practice/info"
 )
 
@@ -10,9 +9,12 @@ func main() {
 
 	weight, height := getUserMetrics()
 
-	// calculate the BMI (weight / (height * height))
-	bmi := weight / (height * height)
+	bmi := calculateBMI(weight, height)
 
-	// output the calculated BMI
-	fmt.Printf("Your BMI: %.2f", bmi)
+	printBMI(bmi)
+
+}
+
+func calculateBMI(weight float64, height float64) float64 {
+	return weight / (height * height)
 }
